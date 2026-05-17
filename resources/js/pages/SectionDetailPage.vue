@@ -713,7 +713,7 @@ onBeforeUnmount(() => {
   line-height: 1.65;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .section-detail-review-block {
     padding: 16px 14px 6px;
   }
@@ -722,8 +722,16 @@ onBeforeUnmount(() => {
     grid-template-columns: 1fr;
   }
 
+  .section-review-item__identity {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
   .review-stars--row {
-    margin-left: 46px;
+    margin-left: 0;
+  }
+
+  .section-review-item p {
+    margin-left: 0;
   }
 }
 </style>

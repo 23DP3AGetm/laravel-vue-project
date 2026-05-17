@@ -3931,9 +3931,424 @@ a {
 }
 
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section,
+  .cta {
+    padding: 56px 0;
+  }
+
+  .hero + .section {
+    padding-top: 56px;
+  }
+
+  .page-section h1,
+  .auth-card h1,
+  .organizator-page-head h1 {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .page-section__text,
+  .hero__text,
+  .organizator-page-head__text {
+    font-size: 16px;
+  }
+
   .auth-card {
     max-width: 100%;
     padding: 16px;
+  }
+
+  .auth-page {
+    align-items: flex-start;
+  }
+
+  .auth-form,
+  .organizator-form,
+  .admin-filters__grid,
+  .sections-filters__grid,
+  .sections-filters__grid--public,
+  .sections-filters__grid--marketplace,
+  .sections-filters__price-grid,
+  .organizator-subpanel-grid,
+  .organizator-inline-form__row--top,
+  .organizator-inline-form__row--time,
+  .organizator-inline-form__row--bottom,
+  .cards-grid--four,
+  .sections-grid,
+  .footer__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-form .btn,
+  .auth-card > .btn,
+  .auth-card > a.btn,
+  .header__actions .btn,
+  .hero__buttons .btn,
+  .cta .btn,
+  .organizator-form__footer .organizator-primary-btn,
+  .organizator-inline-form__submit,
+  .sections-card__action-btn,
+  .section-detail-actions .organizator-primary-btn,
+  .section-review-form .organizator-primary-btn,
+  .profile-btn,
+  .btn-danger,
+  .delete-action-btn,
+  .admin-delete-confirm-btn {
+    width: 100%;
+  }
+
+  .auth-form input,
+  .auth-form textarea,
+  .auth-form select,
+  .organizator-form__field input,
+  .organizator-form__field textarea,
+  .organizator-form__field select,
+  .admin-filter-field input,
+  .admin-filter-field select,
+  .organizator-inline-field input,
+  .organizator-inline-field select,
+  .organizator-inline-form__row--time input,
+  .profile-inline-input {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .header__inner {
+    justify-content: center;
+    gap: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .header__logo,
+  .header__nav,
+  .header__actions {
+    width: 100%;
+  }
+
+  .header__nav {
+    gap: 10px;
+  }
+
+  .header__nav a {
+    width: 100%;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .header__actions {
+    justify-content: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header__actions .profile-menu {
+    width: 100%;
+  }
+
+  .profile-menu__button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .profile-menu__dropdown,
+  .profile-menu__dropdown--notifications {
+    right: 0;
+    left: auto;
+    width: min(100vw - 32px, 320px);
+    min-width: 0;
+    max-width: calc(100vw - 32px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 64px 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero__content h1 {
+    font-size: clamp(32px, 10vw, 48px);
+  }
+
+  .hero__buttons,
+  .cta__inner,
+  .section-heading--row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cta__inner {
+    padding: 24px;
+  }
+
+  .admin-card,
+  .profile-card,
+  .section-detail-content,
+  .organizator-sections-body,
+  .organizator-modal__dialog {
+    padding: 16px;
+  }
+
+  .admin-toast {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 16px;
+  }
+
+  .admin-summary {
+    padding: 16px;
+  }
+
+  .admin-table-card {
+    overflow: hidden;
+  }
+
+  .admin-table,
+  .admin-table thead,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table th,
+  .admin-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table tbody {
+    padding: 12px;
+  }
+
+  .admin-table tr {
+    margin-bottom: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .admin-table__expand-row {
+    margin-top: -12px;
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .admin-table td {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #eef2f7;
+  }
+
+  .admin-table td::before {
+    flex: 0 0 96px;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 600;
+    content: "";
+  }
+
+  .admin-row td:nth-child(1)::before { content: "ID"; }
+  .admin-row td:nth-child(2)::before { content: "Lietotajs"; }
+  .admin-row td:nth-child(3)::before { content: "Email"; }
+  .admin-row td:nth-child(4)::before { content: "Role"; }
+  .admin-row td:nth-child(5)::before { content: "Status"; }
+  .admin-row td:nth-child(6)::before { content: "Registrēts"; }
+  .admin-row td:nth-child(7)::before { content: "Darbibas"; }
+
+  .admin-table__actions {
+    text-align: left;
+  }
+
+  .admin-table__actions .profile-btn {
+    width: 100%;
+  }
+
+  .admin-table__expand-row td,
+  .role-expand-row td,
+  .status-expand-row td {
+    display: block;
+    padding: 0 14px 14px;
+    border-bottom: 0;
+  }
+
+  .admin-table__expand-row td::before,
+  .role-expand-row td::before,
+  .status-expand-row td::before,
+  .admin-table__empty::before {
+    content: none;
+  }
+
+  .admin-table tr:has(.admin-table__empty) {
+    margin-bottom: 0;
+  }
+
+  .admin-table__empty {
+    text-align: center;
+  }
+
+  .admin-footer,
+  .admin-pagination {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-pagination .admin-page-btn {
+    width: 100%;
+  }
+
+  .organizator-page-head,
+  .organizator-section-header,
+  .organizator-section-header--with-action,
+  .organizator-subpanel__head,
+  .organizator-applications-toolbar,
+  .organizator-form__footer,
+  .organizator-modal__header,
+  .organizator-section-item__topline,
+  .organizator-subpanel__item,
+  .organizator-subpanel__item-actions,
+  .actions,
+  .profile-actions,
+  .profile-password-summary {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .organizator-summary-badges,
+  .organizator-filter-chips,
+  .sections-filter-chips,
+  .sections-filters__active-list {
+    flex-wrap: wrap;
+  }
+
+  .organizator-sections-body {
+    padding-top: 0;
+  }
+
+  .organizator-sections-list,
+  .organizator-section-item--expanded {
+    grid-template-columns: 1fr;
+  }
+
+  .organizator-section-item__image,
+  .sections-card__image {
+    max-width: 100%;
+    height: 190px;
+  }
+
+  .organizator-subpanel,
+  .organizator-inline-form__card {
+    padding: 0;
+  }
+
+  .organizator-day-off-toggle {
+    justify-self: start;
+    padding-right: 0;
+  }
+
+  .organizator-modal {
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .organizator-modal__dialog {
+    width: 100%;
+    max-height: calc(100vh - 24px);
+  }
+
+  .section-detail-card {
+    border-radius: 16px;
+  }
+
+  .section-detail-heading,
+  .section-detail-meta,
+  .section-detail-info-grid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .section-detail-meta,
+  .section-detail-actions {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .section-detail-schedule-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .section-detail-schedule-item span {
+    text-align: left;
+    justify-self: start;
+  }
+
+  .profile-details__item,
+  .profile-details__row,
+  .avatar-row,
+  .avatar-row .left,
+  .avatar-row .center,
+  .avatar-row .right {
+    position: static;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    transform: none;
+  }
+
+  .profile-details__item,
+  .profile-details__row,
+  .avatar-row,
+  .avatar-upload {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .avatar-row {
+    gap: 16px;
+    min-height: 0;
+  }
+
+  .avatar-row .center {
+    justify-content: flex-start;
+  }
+
+  .avatar-row .right {
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .profile-label,
+  .profile-value,
+  .profile-value--wide {
+    position: static;
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+    transform: none;
+  }
+
+  .profile-password-summary {
+    gap: 10px;
+  }
+
+  .actions,
+  .profile-actions {
+    gap: 10px;
   }
 
   .hero-wave svg {

@@ -312,6 +312,25 @@
     max-width: 100%;
     padding: 16px;
   }
+
+  .login-links {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .auth-card > .btn,
+  .auth-card > a.btn,
+  .danger-delete-button,
+  .inline-delete-confirm,
+  .inline-delete-cancel,
+  .inline-delete-confirm__danger {
+    width: 100%;
+  }
+
+  .inline-delete-confirm {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
