@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { auth, clearAuth } from './auth';
 import { getNotifications, logout as logoutUser, markNotificationRead } from './services/authService';
@@ -8,8 +8,10 @@ import UserAvatar from './components/ui/UserAvatar.vue';
 const route = useRoute();
 const router = useRouter();
 const authVersion = ref(0);
+const headerRoot = ref(null);
 const profileMenu = ref(null);
 const notificationsMenu = ref(null);
+const isMobileMenuOpen = ref(false);
 const isProfileMenuOpen = ref(false);
 const isNotificationsOpen = ref(false);
 const notifications = ref([]);
@@ -55,6 +57,8 @@ const sports = [
 onMounted(() => {
   window.addEventListener('storage', updateAuthState);
   window.addEventListener('auth-changed', updateAuthState);
+  window.addEventListener('resize', handleViewportResize);
+  document.addEventListener('click', closeMobileMenu);
   document.addEventListener('click', closeProfileMenu);
   document.addEventListener('click', closeNotificationsMenu);
   syncNotifications();
@@ -63,13 +67,53 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('storage', updateAuthState);
   window.removeEventListener('auth-changed', updateAuthState);
+  window.removeEventListener('resize', handleViewportResize);
+  document.removeEventListener('click', closeMobileMenu);
   document.removeEventListener('click', closeProfileMenu);
   document.removeEventListener('click', closeNotificationsMenu);
 });
 
+watch(
+  () => route.fullPath,
+  () => {
+    closeAllMenus();
+  }
+);
+
 function updateAuthState() {
   authVersion.value += 1;
   syncNotifications();
+}
+
+function closeAllMenus() {
+  isMobileMenuOpen.value = false;
+  isProfileMenuOpen.value = false;
+  isNotificationsOpen.value = false;
+}
+
+function toggleMobileMenu() {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+
+  if (!isMobileMenuOpen.value) {
+    isProfileMenuOpen.value = false;
+    isNotificationsOpen.value = false;
+  }
+}
+
+function closeMobileMenu(event) {
+  if (!isMobileMenuOpen.value) {
+    return;
+  }
+
+  if (headerRoot.value && !headerRoot.value.contains(event.target)) {
+    closeAllMenus();
+  }
+}
+
+function handleViewportResize() {
+  if (window.innerWidth > 768) {
+    closeAllMenus();
+  }
 }
 
 function toggleProfileMenu() {
@@ -138,28 +182,44 @@ async function logout() {
 
   clearAuth();
   updateAuthState();
-  isProfileMenuOpen.value = false;
+  closeAllMenus();
   router.push('/');
 }
 </script>
 
 <template>
   <div class="page">
-    <header class="header">
+    <header ref="headerRoot" class="header">
       <div class="container header__inner">
         <RouterLink class="header__logo" to="/">
           <span class="header__logo-mark">SS</span>
           <span>SportaHub</span>
         </RouterLink>
 
-        <nav class="header__nav" aria-label="Galvena navigacija">
+        <button
+          class="header__menu-toggle"
+          type="button"
+          :aria-expanded="isMobileMenuOpen"
+          aria-label="Atvert navigaciju"
+          @click.stop="toggleMobileMenu"
+        >
+          <span class="header__menu-toggle-line" :class="{ 'header__menu-toggle-line--top-open': isMobileMenuOpen }"></span>
+          <span class="header__menu-toggle-line" :class="{ 'header__menu-toggle-line--middle-open': isMobileMenuOpen }"></span>
+          <span class="header__menu-toggle-line" :class="{ 'header__menu-toggle-line--bottom-open': isMobileMenuOpen }"></span>
+        </button>
+
+        <nav
+          class="header__nav"
+          :class="{ 'header__nav--mobile-open': isMobileMenuOpen }"
+          aria-label="Galvena navigacija"
+        >
           <RouterLink to="/" active-class="active" exact-active-class="active">Sākums</RouterLink>
           <RouterLink to="/sekcijas" active-class="active">Sekcijas</RouterLink>
           <RouterLink to="/par-mums" active-class="active">Par mums</RouterLink>
           <RouterLink to="/kontakti" active-class="active">Kontakti</RouterLink>
         </nav>
 
-        <div class="header__actions">
+        <div class="header__actions" :class="{ 'header__actions--mobile-open': isMobileMenuOpen }">
           <template v-if="!isAuth">
             <RouterLink class="btn btn--ghost btn--login" to="/login">Ieiet</RouterLink>
             <RouterLink class="btn btn--small btn--header-primary" to="/register">Reģistrēties</RouterLink>
