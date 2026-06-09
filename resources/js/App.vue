@@ -423,7 +423,7 @@ async function logout() {
         <div class="footer__column">
           <h3>Kontakti</h3>
           <a href="mailto:info@sportasekcijas.lv">info@sportasekcijas.lv</a>
-          <a href="tel:+37120000000">+371 20000000</a>
+          <a href="tel:+37124874327">+371 24874327</a>
         </div>
 
         <div class="footer__column">
