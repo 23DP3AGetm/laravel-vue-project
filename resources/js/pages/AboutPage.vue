@@ -32,6 +32,7 @@
 
 .about-page__container {
   max-width: 760px;
+  margin: 0;
 }
 
 .about-page h1 {
