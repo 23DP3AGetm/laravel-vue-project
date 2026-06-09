@@ -31,29 +31,6 @@ const isAdmin = computed(() => currentUser.value?.role === 'admin');
 const canAccessOrganizator = computed(() => currentUser.value?.role === 'organizator');
 const headerAvatarUrl = computed(() => currentUser.value?.avatar ? `/storage/${currentUser.value.avatar}` : '');
 
-const sports = [
-  {
-    title: 'Futbols',
-    text: 'Komandas gars, ātrums un regulāri treniņi dažādiem vecumiem.',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=700&q=80',
-  },
-  {
-    title: 'Peldēšana',
-    text: 'Veselībai, izturībai un drošai kustībai ūdenī.',
-    image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=700&q=80',
-  },
-  {
-    title: 'Bokss',
-    text: 'Disciplīna, spēks un pārliecība par savām spējām.',
-    image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=700&q=80',
-  },
-  {
-    title: 'Fitness',
-    text: 'Aktīvi treniņi ikdienas enerģijai un labākai formai.',
-    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80',
-  },
-];
-
 onMounted(() => {
   window.addEventListener('storage', updateAuthState);
   window.addEventListener('auth-changed', updateAuthState);
@@ -421,30 +398,6 @@ async function logout() {
             </div>
           </div>
         </section>
-
-        <section class="section" id="sections">
-          <div class="container">
-            <div class="section-heading section-heading--row">
-              <div>
-                <p class="section-label">Sekcijas</p>
-                <h2>Populāri sporta veidi</h2>
-              </div>
-              <a class="section-link" href="#">Skatīt visas</a>
-            </div>
-
-            <div class="cards-grid cards-grid--four">
-              <article v-for="sport in sports" :key="sport.title" class="section-card">
-                <img :src="sport.image" :alt="sport.title">
-                <div class="section-card__content">
-                  <h3>{{ sport.title }}</h3>
-                  <p>{{ sport.text }}</p>
-                  <a href="#">Uzzināt vairāk</a>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
         <section class="cta">
           <div class="container cta__inner">
             <div>
