@@ -1,25 +1,27 @@
 <template>
   <section class="section page-section about-page">
-    <div class="container about-page__container">
-      <p class="section-label">Par mums</p>
-      <h1>SportaHub palīdz atrast piemērotas sporta nodarbības vienuviet</h1>
+    <div class="container">
+      <div class="about-page__inner">
+        <p class="section-label">Par mums</p>
+        <h1>SportaHub palīdz atrast piemērotas sporta nodarbības vienuviet</h1>
 
-      <div class="about-page__content">
-        <p>
-          SportaHub ir platforma, kas palīdz bērniem, vecākiem un pieaugušajiem ērti atrast
-          sporta sekcijas visā Latvijā. Mēs apkopojam svarīgāko informāciju vienā vietā, lai
-          sporta izvēle būtu vienkāršāka, saprotamāka un ātrāka.
-        </p>
+        <div class="about-page__content">
+          <p>
+            SportaHub ir platforma, kas palīdz bērniem, vecākiem un pieaugušajiem ērti atrast
+            sporta sekcijas visā Latvijā. Mēs apkopojam svarīgāko informāciju vienā vietā, lai
+            sporta izvēle būtu vienkāršāka, saprotamāka un ātrāka.
+          </p>
 
-        <p>
-          Mūsu mērķis ir padarīt ceļu līdz piemērotai nodarbībai pēc iespējas skaidrāku:
-          no pirmās intereses līdz saziņai ar organizatoru un pieteikšanās procesam.
-        </p>
-      </div>
+          <p>
+            Mūsu mērķis ir padarīt ceļu līdz piemērotai nodarbībai pēc iespējas skaidrāku:
+            no pirmās intereses līdz saziņai ar organizatoru un pieteikšanās procesam.
+          </p>
+        </div>
 
-      <div class="about-page__actions">
-        <RouterLink class="btn" to="/sekcijas">Apskatīt sekcijas</RouterLink>
-        <RouterLink class="btn btn--outline" to="/kontakti">Sazināties ar mums</RouterLink>
+        <div class="about-page__actions">
+          <RouterLink class="btn" to="/sekcijas">Apskatīt sekcijas</RouterLink>
+          <RouterLink class="btn btn--outline" to="/kontakti">Sazināties ar mums</RouterLink>
+        </div>
       </div>
     </div>
   </section>
@@ -30,9 +32,8 @@
   background: #f8fafc;
 }
 
-.about-page__container {
+.about-page__inner {
   max-width: 760px;
-  margin: 0;
 }
 
 .about-page h1 {
