@@ -398,15 +398,6 @@ async function logout() {
             </div>
           </div>
         </section>
-        <section class="cta">
-          <div class="container cta__inner">
-            <div>
-              <p class="section-label">Gatavs sākt?</p>
-              <h2>Sāc savu sporta ceļu jau šodien</h2>
-            </div>
-            <RouterLink class="btn" to="/register">Reģistrēties</RouterLink>
-          </div>
-        </section>
       </template>
 
       <RouterView v-else />
