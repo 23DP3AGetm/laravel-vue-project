@@ -4,7 +4,7 @@ SportaHub ir tīmekļa platforma sporta sekciju meklēšanai un salīdzināšana
 
 **Projekta adrese:** https://sportahub.site
 
-**Autors:** Aleksandrs Getmaņenko
+**Autors:** Aleksandrs Getmanenko
 
 **Projekta mērķis:** palīdzēt lietotājiem atrast piemērotas sporta nodarbības pēc sporta veida, atrašanās vietas un citiem kritērijiem, kā arī nodrošināt sporta organizācijām iespēju publicēt informāciju par savām sekcijām.
 
