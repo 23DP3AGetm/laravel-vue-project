@@ -1,62 +1,108 @@
 # SportaHub
 
-SportaHub ir tīmekļa platforma sporta sekciju meklēšanai un salīdzināšanai Latvijā.
+SportaHub ir tīmekļa platforma sporta sekciju meklēšanai un salīdzināšanai Latvijā. Sistēma palīdz lietotājiem atrast piemērotas sporta nodarbības, iepazīties ar sekciju informāciju, pieteikties nodarbībām un saņemt paziņojumus par aktivitātēm sistēmā.
 
-**Projekta adrese:** https://sportahub.site
+## Tehnoloģijas
 
-**Autors:** Aleksandrs Getmanenko
+### Backend
 
-**Projekta mērķis:** palīdzēt lietotājiem atrast piemērotas sporta nodarbības pēc sporta veida, atrašanās vietas un citiem kritērijiem, kā arī nodrošināt sporta organizācijām iespēju publicēt informāciju par savām sekcijām.
+* PHP 8.2
+* Laravel 12
+* Laravel Sanctum
+* Laravel Breeze
 
-## Lietotāju lomas
+### Frontend
 
-### Viesis
+* Vue 3
+* Vue Router
+* Vuetify
+* Tailwind CSS 4
+* Axios
+* Vite
 
-* Pārlūko sporta sekcijas
-* Veic meklēšanu un filtrēšanu
+### Datu bāze
 
-### Reģistrēts lietotājs
+* MySQL
 
-* Pārvalda savu profilu
-* Saņem paziņojumus
-* Pievienojas sporta sekcijām
+### Serveris
 
-### Administrators
+* Ubuntu Server
+* Nginx
+* Git
+* Hetzner Cloud
 
-* Pārvalda sporta sekcijas
-* Pārvalda lietotājus
-* Rediģē un dzēš sistēmas datus
+## Ko projekts dara
 
+* Lietotāju reģistrācija un autentifikācija.
+* Sporta sekciju pārlūkošana.
+* Sporta sekciju meklēšana un filtrēšana.
+* Sporta sekciju aprakstu, adrešu un grafiku apskate.
+* Pieteikšanās sporta sekcijām.
+* Atsauksmju pievienošana un apskate.
+* Lietotāju paziņojumu sistēma.
+* Administrācijas funkcionalitāte.
+* Responsīvs dizains dažādām ierīcēm.
+* PWA (Progressive Web Application) atbalsts.
 
-## Sistēmas funkcionalitāte
+## Datu bāzes struktūra
 
-SportaHub nodrošina:
+Galvenās sistēmas tabulas:
 
-* sporta sekciju meklēšanu;
-* sporta sekciju filtrēšanu pēc dažādiem kritērijiem;
-* lietotāju reģistrāciju un autentifikāciju;
-* lietotāju profilu pārvaldību;
-* paziņojumu sistēmu;
-* sporta sekciju pārvaldību;
-* administrēšanas funkcionalitāti;
-* progresīvās tīmekļa lietotnes (PWA) atbalstu.
+* users
+* sections
+* section_addresses
+* section_schedules
+* section_reviews
+* section_applications
+* user_notifications
+* admin_actions
 
+Papildus tiek izmantotas Laravel sistēmas tabulas:
 
-## Drošība
+* migrations
+* password_reset_tokens
+* personal_access_tokens
 
-Projektā ir ieviesti šādi drošības pasākumi:
+## Funkcionalitāte
 
-* lietotāju autentifikācija;
-* paroļu šifrēšana;
-* ievaddatu validācija;
-* aizsardzība pret CSRF uzbrukumiem;
-* Laravel drošības mehānismu izmantošana.
+### Lietotāji
+
+* Reģistrācija.
+* Pieslēgšanās sistēmai.
+* Personīgais profils.
+* Paziņojumu saņemšana.
+* Pieteikšanās sporta sekcijām.
+
+### Sporta sekcijas
+
+* Sporta sekciju katalogs.
+* Informācija par sekciju.
+* Adreses un atrašanās vieta.
+* Nodarbību grafiki.
+* Atsauksmes un vērtējumi.
+
+### Administrācija
+
+* Sporta sekciju pārvaldība.
+* Lietotāju darbību uzraudzība.
+* Sistēmas darbību žurnāls.
+* Administratīvo darbību uzskaite.
 
 ## PWA atbalsts
 
-SportaHub atbalsta Progressive Web Application tehnoloģiju:
+Projektā ir ieviests:
 
-* manifest.json konfigurācija;
-* Service Worker;
-* instalēšana kā lietotne;
-* kešošanas mehānismi.
+* manifest.json
+* Service Worker
+* Instalēšana kā lietotne
+* Offline kešošanas atbalsts
+
+## Projekta adrese
+
+https://sportahub.site
+
+## Autors
+
+Aleksandrs Getmaņenko
+
+2026
