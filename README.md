@@ -28,140 +28,35 @@ SportaHub ir tīmekļa platforma sporta sekciju meklēšanai un salīdzināšana
 * Rediģē un dzēš sistēmas datus
 
 
-## Galvenās funkcijas
+## Sistēmas funkcionalitāte
 
-* Sporta sekciju katalogs
-* Sporta sekciju meklēšana
-* Datu filtrēšana
-* Lietotāju reģistrācija un autentifikācija
-* Lietotāju profili
-* Paziņojumu sistēma
-* Administrācijas funkcionalitāte
-* Responsīvs dizains
-* PWA (Progressive Web Application) atbalsts
+SportaHub nodrošina:
 
-## Izmantotās tehnoloģijas
+* sporta sekciju meklēšanu;
+* sporta sekciju filtrēšanu pēc dažādiem kritērijiem;
+* lietotāju reģistrāciju un autentifikāciju;
+* lietotāju profilu pārvaldību;
+* paziņojumu sistēmu;
+* sporta sekciju pārvaldību;
+* administrēšanas funkcionalitāti;
+* progresīvās tīmekļa lietotnes (PWA) atbalstu.
 
-### Backend
 
-* PHP 8+
-* Laravel 12
-* MySQL
+## Drošība
 
-### Frontend
+Projektā ir ieviesti šādi drošības pasākumi:
 
-* Vue 3
-* Vue Router
-* Vite
-* JavaScript
-* HTML5
-* CSS3
-
-### Serveris
-
-* Ubuntu Server
-* Nginx
-* Git
-* Hetzner Cloud
-
-## Sistēmas prasības
-
-* PHP 8.2+
-* Composer
-* Node.js 18+
-* npm
-* MySQL 8+
-
-## Projekta uzstādīšana
-
-### 1. Klonēt repozitoriju
-
-```bash
-git clone https://github.com/23DP3AGetm/laravel-vue-project.git
-cd laravel-vue-project
-```
-
-### 2. Instalēt PHP atkarības
-
-```bash
-composer install
-```
-
-### 3. Instalēt JavaScript atkarības
-
-```bash
-npm install
-```
-
-### 4. Izveidot .env failu
-
-```bash
-cp .env.example .env
-```
-
-### 5. Ģenerēt lietotnes atslēgu
-
-```bash
-php artisan key:generate
-```
-
-### 6. Konfigurēt datubāzi
-
-Norādīt datubāzes parametrus `.env` failā:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=sportahub
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-### 7. Palaist migrācijas
-
-```bash
-php artisan migrate
-```
-
-### 8. Palaist izstrādes serveri
-
-Laravel:
-
-```bash
-php artisan serve
-```
-
-Frontend:
-
-```bash
-npm run dev
-```
-
-## Projekta struktūra
-
-```text
-app/
-bootstrap/
-config/
-database/
-public/
-resources/
-routes/
-storage/
-```
+* lietotāju autentifikācija;
+* paroļu šifrēšana;
+* ievaddatu validācija;
+* aizsardzība pret CSRF uzbrukumiem;
+* Laravel drošības mehānismu izmantošana.
 
 ## PWA atbalsts
 
-Projektā ir ieviests:
+SportaHub atbalsta Progressive Web Application tehnoloģiju:
 
-* manifest.json
-* Service Worker
-* Instalēšana kā lietotne
-* Offline kešošanas atbalsts
-
-## Autors
-
-Aleksandrs Getmaņenko
-
-2026
+* manifest.json konfigurācija;
+* Service Worker;
+* instalēšana kā lietotne;
+* kešošanas mehānismi.
